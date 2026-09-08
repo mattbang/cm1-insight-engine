@@ -1,0 +1,141 @@
+{
+  "synthetic": true,
+  "units": "kEUR",
+  "scenario_notes": {
+    "Country A": "Concentrated price improvement justifies descending from segment to Product A1, while the volume offset is spread across products.",
+    "Country B": "A small +20 kEUR country result conceals Segment C +400 and Segment D -380. Individual products are below the divergence threshold, so the explanation stays at segment level.",
+    "Country C": "Volume gains of +800 kEUR face -600 kEUR of price pressure. The volume leader and price-pressure leader are different products."
+  },
+  "records": [
+    {
+      "ViewName": "Country A",
+      "Final_Segment": "Segment A",
+      "SlideSubSegment": "Product A1",
+      "Base_CM1": 1660,
+      "Comp_CM1": 1000,
+      "Price_Segment": 700,
+      "Volume_Segment": -40,
+      "Mix_Segment": 0
+    },
+    {
+      "ViewName": "Country A",
+      "Final_Segment": "Segment A",
+      "SlideSubSegment": "Product A2",
+      "Base_CM1": 1020,
+      "Comp_CM1": 1000,
+      "Price_Segment": 100,
+      "Volume_Segment": -80,
+      "Mix_Segment": 0
+    },
+    {
+      "ViewName": "Country A",
+      "Final_Segment": "Segment B",
+      "SlideSubSegment": "Product B1",
+      "Base_CM1": 1170,
+      "Comp_CM1": 1000,
+      "Price_Segment": 200,
+      "Volume_Segment": -80,
+      "Mix_Segment": 50
+    },
+    {
+      "ViewName": "Country B",
+      "Final_Segment": "Segment C",
+      "SlideSubSegment": "Product C1",
+      "Base_CM1": 1100,
+      "Comp_CM1": 1000,
+      "Price_Segment": 100,
+      "Volume_Segment": 0,
+      "Mix_Segment": 0
+    },
+    {
+      "ViewName": "Country B",
+      "Final_Segment": "Segment C",
+      "SlideSubSegment": "Product C2",
+      "Base_CM1": 1100,
+      "Comp_CM1": 1000,
+      "Price_Segment": 100,
+      "Volume_Segment": 0,
+      "Mix_Segment": 0
+    },
+    {
+      "ViewName": "Country B",
+      "Final_Segment": "Segment C",
+      "SlideSubSegment": "Product C3",
+      "Base_CM1": 1100,
+      "Comp_CM1": 1000,
+      "Price_Segment": 100,
+      "Volume_Segment": 0,
+      "Mix_Segment": 0
+    },
+    {
+      "ViewName": "Country B",
+      "Final_Segment": "Segment C",
+      "SlideSubSegment": "Product C4",
+      "Base_CM1": 1100,
+      "Comp_CM1": 1000,
+      "Price_Segment": 100,
+      "Volume_Segment": 0,
+      "Mix_Segment": 0
+    },
+    {
+      "ViewName": "Country B",
+      "Final_Segment": "Segment D",
+      "SlideSubSegment": "Product D1",
+      "Base_CM1": 905,
+      "Comp_CM1": 1000,
+      "Price_Segment": -95,
+      "Volume_Segment": 0,
+      "Mix_Segment": 0
+    },
+    {
+      "ViewName": "Country B",
+      "Final_Segment": "Segment D",
+      "SlideSubSegment": "Product D2",
+      "Base_CM1": 905,
+      "Comp_CM1": 1000,
+      "Price_Segment": -95,
+      "Volume_Segment": 0,
+      "Mix_Segment": 0
+    },
+    {
+      "ViewName": "Country B",
+      "Final_Segment": "Segment D",
+      "SlideSubSegment": "Product D3",
+      "Base_CM1": 905,
+      "Comp_CM1": 1000,
+      "Price_Segment": -95,
+      "Volume_Segment": 0,
+      "Mix_Segment": 0
+    },
+    {
+      "ViewName": "Country B",
+      "Final_Segment": "Segment D",
+      "SlideSubSegment": "Product D4",
+      "Base_CM1": 905,
+      "Comp_CM1": 1000,
+      "Price_Segment": -95,
+      "Volume_Segment": 0,
+      "Mix_Segment": 0
+    },
+    {
+      "ViewName": "Country C",
+      "Final_Segment": "Segment E",
+      "SlideSubSegment": "Growth product",
+      "Base_CM1": 1600,
+      "Comp_CM1": 1000,
+      "Price_Segment": -100,
+      "Volume_Segment": 700,
+      "Mix_Segment": 0
+    },
+    {
+      "ViewName": "Country C",
+      "Final_Segment": "Segment F",
+      "SlideSubSegment": "Price product",
+      "Base_CM1": 550,
+      "Comp_CM1": 1000,
+      "Price_Segment": -500,
+      "Volume_Segment": 100,
+      "Mix_Segment": -50
+    }
+  ]
+}

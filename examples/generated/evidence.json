@@ -1,0 +1,426 @@
+{
+  "synthetic": true,
+  "units": "kEUR",
+  "scope": "decision layer",
+  "input_record_count": 13,
+  "country_count": 3,
+  "reports": [
+    {
+      "scope": "Synthetic region",
+      "scope_type": "region",
+      "story": "Synthetic region: CM1 +1,020 kEUR: volume +600 kEUR, price +420 kEUR. Volume led by Country C / Segment E / Growth product (+700 kEUR; 88% of gains). Offsetting contributions: Country A / Segment A / Product A1 gained +660 kEUR, while Country C / Segment F / Price product declined -450 kEUR.",
+      "subtitle": "CM1 +1,020 kEUR; Volume +600 kEUR; Price +420 kEUR.",
+      "evidence": {
+        "diagnosis": {
+          "total": 1020.0,
+          "top": {
+            "name": "Volume",
+            "value": 600.0
+          },
+          "offset": null,
+          "pattern": "simple",
+          "positives": [
+            {
+              "name": "Volume",
+              "value": 600.0
+            },
+            {
+              "name": "Price",
+              "value": 420.0
+            }
+          ],
+          "negatives": [],
+          "effects": [
+            {
+              "name": "Price",
+              "value": 420.0
+            },
+            {
+              "name": "Volume",
+              "value": 600.0
+            },
+            {
+              "name": "Mix",
+              "value": 0.0
+            }
+          ],
+          "policy": {
+            "eps": 0.5,
+            "min_drill": 25.0,
+            "concentration": 0.6,
+            "divergence_abs": 150.0,
+            "divergence_share": 0.25,
+            "offset_ratio": 0.4,
+            "toxic_ratio": 0.5,
+            "subtitle_max": 120
+          },
+          "reconciliation_gap": 0.0
+        },
+        "primary": {
+          "path": [
+            [
+              "ViewName",
+              "Country C"
+            ],
+            [
+              "Final_Segment",
+              "Segment E"
+            ],
+            [
+              "SlideSubSegment",
+              "Growth product"
+            ]
+          ],
+          "level": "SlideSubSegment",
+          "value": 700.0,
+          "share": 0.875,
+          "reason": "concentrated",
+          "metric": "Volume"
+        },
+        "offset": null,
+        "divergence": {
+          "growth": {
+            "path": [
+              [
+                "ViewName",
+                "Country A"
+              ],
+              [
+                "Final_Segment",
+                "Segment A"
+              ],
+              [
+                "SlideSubSegment",
+                "Product A1"
+              ]
+            ],
+            "value": 660.0
+          },
+          "decline": {
+            "path": [
+              [
+                "ViewName",
+                "Country C"
+              ],
+              [
+                "Final_Segment",
+                "Segment F"
+              ],
+              [
+                "SlideSubSegment",
+                "Price product"
+              ]
+            ],
+            "value": -450.0
+          }
+        },
+        "detail_gap": 0.0,
+        "unattributed_delta": 0.0
+      }
+    },
+    {
+      "scope": "Country A",
+      "scope_type": "country",
+      "story": "Country A: CM1 +850 kEUR: price +1,000 kEUR, volume -200 kEUR, residual mix +50 kEUR. Price led by Segment A / Product A1 (+700 kEUR; 70% of gains). Volume led by Segment A (-120 kEUR; 60% of declines).",
+      "subtitle": "CM1 +850 kEUR; Price +1,000 kEUR; Volume -200 kEUR; Mix +50 kEUR.",
+      "evidence": {
+        "diagnosis": {
+          "total": 850.0,
+          "top": {
+            "name": "Price",
+            "value": 1000.0
+          },
+          "offset": {
+            "name": "Volume",
+            "value": -200.0
+          },
+          "pattern": "simple",
+          "positives": [
+            {
+              "name": "Price",
+              "value": 1000.0
+            },
+            {
+              "name": "Mix",
+              "value": 50.0
+            }
+          ],
+          "negatives": [
+            {
+              "name": "Volume",
+              "value": -200.0
+            }
+          ],
+          "effects": [
+            {
+              "name": "Price",
+              "value": 1000.0
+            },
+            {
+              "name": "Volume",
+              "value": -200.0
+            },
+            {
+              "name": "Mix",
+              "value": 50.0
+            }
+          ],
+          "policy": {
+            "eps": 0.5,
+            "min_drill": 25.0,
+            "concentration": 0.6,
+            "divergence_abs": 150.0,
+            "divergence_share": 0.25,
+            "offset_ratio": 0.4,
+            "toxic_ratio": 0.5,
+            "subtitle_max": 120
+          },
+          "reconciliation_gap": 0.0
+        },
+        "primary": {
+          "path": [
+            [
+              "Final_Segment",
+              "Segment A"
+            ],
+            [
+              "SlideSubSegment",
+              "Product A1"
+            ]
+          ],
+          "level": "SlideSubSegment",
+          "value": 700.0,
+          "share": 0.7,
+          "reason": "concentrated",
+          "metric": "Price"
+        },
+        "offset": {
+          "path": [
+            [
+              "Final_Segment",
+              "Segment A"
+            ]
+          ],
+          "level": "Final_Segment",
+          "value": -120.0,
+          "share": 0.6,
+          "reason": "concentrated",
+          "metric": "Volume"
+        },
+        "divergence": null,
+        "detail_gap": 0.0,
+        "unattributed_delta": 0.0
+      }
+    },
+    {
+      "scope": "Country B",
+      "scope_type": "country",
+      "story": "Country B: CM1 +20 kEUR: price +20 kEUR. Price led by Segment C (+400 kEUR; 100% of gains). Offsetting contributions: Segment C gained +400 kEUR, while Segment D declined -380 kEUR.",
+      "subtitle": "CM1 +20 kEUR; Price +20 kEUR.",
+      "evidence": {
+        "diagnosis": {
+          "total": 20.0,
+          "top": {
+            "name": "Price",
+            "value": 20.0
+          },
+          "offset": null,
+          "pattern": "simple",
+          "positives": [
+            {
+              "name": "Price",
+              "value": 20.0
+            }
+          ],
+          "negatives": [],
+          "effects": [
+            {
+              "name": "Price",
+              "value": 20.0
+            },
+            {
+              "name": "Volume",
+              "value": 0.0
+            },
+            {
+              "name": "Mix",
+              "value": 0.0
+            }
+          ],
+          "policy": {
+            "eps": 0.5,
+            "min_drill": 25.0,
+            "concentration": 0.6,
+            "divergence_abs": 150.0,
+            "divergence_share": 0.25,
+            "offset_ratio": 0.4,
+            "toxic_ratio": 0.5,
+            "subtitle_max": 120
+          },
+          "reconciliation_gap": 0.0
+        },
+        "primary": {
+          "path": [
+            [
+              "Final_Segment",
+              "Segment C"
+            ]
+          ],
+          "level": "Final_Segment",
+          "value": 400.0,
+          "share": 1.0,
+          "reason": "concentrated",
+          "metric": "Price"
+        },
+        "offset": null,
+        "divergence": {
+          "growth": {
+            "path": [
+              [
+                "Final_Segment",
+                "Segment C"
+              ]
+            ],
+            "value": 400.0
+          },
+          "decline": {
+            "path": [
+              [
+                "Final_Segment",
+                "Segment D"
+              ]
+            ],
+            "value": -380.0
+          }
+        },
+        "detail_gap": 0.0,
+        "unattributed_delta": 0.0
+      }
+    },
+    {
+      "scope": "Country C",
+      "scope_type": "country",
+      "story": "Country C: CM1 +150 kEUR; volume gains partly offset by price pressure (volume +800 kEUR, price -600 kEUR, residual mix -50 kEUR). Volume led by Segment E / Growth product (+700 kEUR; 88% of gains). Price led by Segment F / Price product (-500 kEUR; 83% of declines). Offsetting contributions: Segment E / Growth product gained +600 kEUR, while Segment F / Price product declined -450 kEUR.",
+      "subtitle": "CM1 +150 kEUR; Volume +800 kEUR; Price -600 kEUR; Mix -50 kEUR.",
+      "evidence": {
+        "diagnosis": {
+          "total": 150.0,
+          "top": {
+            "name": "Volume",
+            "value": 800.0
+          },
+          "offset": {
+            "name": "Price",
+            "value": -600.0
+          },
+          "pattern": "price_volume_tradeoff",
+          "positives": [
+            {
+              "name": "Volume",
+              "value": 800.0
+            }
+          ],
+          "negatives": [
+            {
+              "name": "Price",
+              "value": -600.0
+            },
+            {
+              "name": "Mix",
+              "value": -50.0
+            }
+          ],
+          "effects": [
+            {
+              "name": "Price",
+              "value": -600.0
+            },
+            {
+              "name": "Volume",
+              "value": 800.0
+            },
+            {
+              "name": "Mix",
+              "value": -50.0
+            }
+          ],
+          "policy": {
+            "eps": 0.5,
+            "min_drill": 25.0,
+            "concentration": 0.6,
+            "divergence_abs": 150.0,
+            "divergence_share": 0.25,
+            "offset_ratio": 0.4,
+            "toxic_ratio": 0.5,
+            "subtitle_max": 120
+          },
+          "reconciliation_gap": 0.0
+        },
+        "primary": {
+          "path": [
+            [
+              "Final_Segment",
+              "Segment E"
+            ],
+            [
+              "SlideSubSegment",
+              "Growth product"
+            ]
+          ],
+          "level": "SlideSubSegment",
+          "value": 700.0,
+          "share": 0.875,
+          "reason": "concentrated",
+          "metric": "Volume"
+        },
+        "offset": {
+          "path": [
+            [
+              "Final_Segment",
+              "Segment F"
+            ],
+            [
+              "SlideSubSegment",
+              "Price product"
+            ]
+          ],
+          "level": "SlideSubSegment",
+          "value": -500.0,
+          "share": 0.8333333333333334,
+          "reason": "concentrated",
+          "metric": "Price"
+        },
+        "divergence": {
+          "growth": {
+            "path": [
+              [
+                "Final_Segment",
+                "Segment E"
+              ],
+              [
+                "SlideSubSegment",
+                "Growth product"
+              ]
+            ],
+            "value": 600.0
+          },
+          "decline": {
+            "path": [
+              [
+                "Final_Segment",
+                "Segment F"
+              ],
+              [
+                "SlideSubSegment",
+                "Price product"
+              ]
+            ],
+            "value": -450.0
+          }
+        },
+        "detail_gap": 0.0,
+        "unattributed_delta": 0.0
+      }
+    }
+  ]
+}

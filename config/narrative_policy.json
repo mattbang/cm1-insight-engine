@@ -1,0 +1,10 @@
+{
+  "eps": 0.5,
+  "min_drill": 25.0,
+  "concentration": 0.60,
+  "divergence_abs": 150.0,
+  "divergence_share": 0.25,
+  "offset_ratio": 0.40,
+  "toxic_ratio": 0.50,
+  "subtitle_max": 120
+}

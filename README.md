@@ -1,0 +1,75 @@
+# CM1 Insight Engine
+
+**From country-by-country margin analysis to consistent executive reporting.**
+
+I built this workflow to automate the recurring analyst work behind a monthly management pack: calculate contribution-margin movements, identify the drivers that matter, and write the first draft of the executive story for every country.
+
+The most valuable output is the **management commentary**. The engine works through country, segment and product relationships to explain what improved, what deteriorated, and which opposing movements the headline result hides. Formatted Excel outputs then support **Empower-linked PowerPoint updates**, reducing manual editing of slide text and charts.
+
+[One-page handout](assets/CM1_Insight_Engine_Handout.pdf) · [Five-slide showcase](assets/CM1_Insight_Engine_Showcase.pdf) · [Generated comments](examples/generated/management-commentary.md) · [Run the demo](#try-it)
+
+![Synthetic country report combining generated management commentary, KPI cards, segment rankings and PVM waterfalls](assets/slides/slide-05.png)
+
+*Fictional figures and entities. [Browse all five reporting views →](docs/showcase.md)*
+
+## The business value
+
+A small net variance can hide a large gain in one segment and a serious decline in another. Finding that story manually means investigating each country, drilling through product levels, comparing price and volume effects, and translating the findings into an executive summary.
+
+| Recurring analyst work | What the workflow automates |
+|---|---|
+| Analyse each country separately | Apply the same analytical rules across the region in one run |
+| Decide which product level explains the change | Select a product, segment or broader explanation according to the evidence |
+| Investigate gains and offsetting pressures | Trace the leading effect and its main offset to their own contributors |
+| Draft executive comments | Generate consistent management stories and concise slide subtitles |
+| Transfer results into the monthly pack | Prepare Excel feeds for linked PowerPoint text and charts |
+
+This replaces repetitive investigation, calculation and first-draft writing, giving finance teams more time for exceptions, commercial context and decisions.
+
+The original project documented an estimate of **about 2.5 hours of preparation reduced to around 30 seconds of processing after source refresh**. This is a historical workflow estimate, not a controlled benchmark; refresh and management review are additional steps.
+
+## The hard part: choosing the right story
+
+The largest product movement is not always the best explanation. Price gains may come from a product whose net result declined because of volume losses. A segment may matter collectively even when none of its products dominates.
+
+The engine uses separate attribution for each effect, configurable materiality and concentration thresholds, and a check for opposing branches that cancel higher in the hierarchy. It stops drilling when a more detailed claim would be weak, and records the evidence behind each selection.
+
+**Example:** In the demo, Country B is only **€20k** ahead. Underneath, Segment C improves by **€400k**, while Segment D declines by **€380k**. Each movement is spread across smaller products. The generated story still identifies both segments:
+
+> Offsetting contributions: Segment C gained +400 kEUR, while Segment D declined -380 kEUR.
+
+The commentary is deterministic and data-derived. It describes calculated relationships without inventing commercial causes. [Read the selection logic →](docs/logic.md)
+
+## From financial extract to executive slide
+
+```mermaid
+flowchart LR
+    A[Refreshed extract] --> B[Reconcile and calculate PVM]
+    B --> C[Identify drivers and draft commentary]
+    C --> D[Formatted Excel feeds]
+    D --> E[Empower-linked PowerPoint]
+```
+
+**My contribution:** financial-analysis logic, hierarchy-aware driver selection, commentary rules, reporting automation and validation of the output contracts.
+
+**Original workflow:** Python, pandas, NumPy, Excel/openpyxl and Office chart XML; evolved from Power Query. **Public demo:** Python and pandas.
+
+## Try it
+
+This repository publishes the reviewed **commentary engine**, a synthetic demo, tests and sanitized reporting examples. The demo consumes already calculated price, volume and residual mix effects. Source-system ingestion, the full PVM pipeline and live Empower connections remain outside this public package.
+
+With Python 3.11 or 3.12:
+
+```bash
+python -m venv .venv
+source .venv/bin/activate  # Windows: .venv\Scripts\activate
+python -m pip install -r requirements-dev.txt
+python demo.py
+python -m pytest
+```
+
+The demo generates management commentary, a CSV reporting feed and an evidence record from fictional countries and products. A [formatted Excel exhibit](examples/generated/reporting-feed.xlsx) illustrates the fixed reporting-cell layout; it is a packaged example, not regenerated by the Python demo. See [demo inputs and outputs](docs/demo.md), [the engine](src/cm1_narratives.py), and [validation scope](docs/validation.md).
+
+All public data is synthetic. The slides preserve earlier machine-generated story wording with substituted names and figures; they are a showcase of the reporting workflow, rather than a fresh rendering of the revised demo.
+
+MIT licensed. [Matthew Bangle](https://github.com/mattbang)

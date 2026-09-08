@@ -1,0 +1,259 @@
+{
+  "disclosure": "Entirely synthetic figures and fictional entities. Original machine-story wording retained with substituted names and figures. No source workbooks or live Empower links are included.",
+  "segments": [
+    {
+      "name": "Segment A",
+      "base": 31500,
+      "delta": 720,
+      "vol": -210,
+      "price": 1050,
+      "mix": -120,
+      "u0": 20400,
+      "u1": 20210,
+      "actual": 32220
+    },
+    {
+      "name": "Segment B",
+      "base": 22600,
+      "delta": 180,
+      "vol": -800,
+      "price": 950,
+      "mix": 30,
+      "u0": 5100,
+      "u1": 4930,
+      "actual": 22780
+    },
+    {
+      "name": "Segment C",
+      "base": 18400,
+      "delta": 230,
+      "vol": -40,
+      "price": 310,
+      "mix": -40,
+      "u0": 4200,
+      "u1": 4180,
+      "actual": 18630
+    },
+    {
+      "name": "Segment D",
+      "base": 7100,
+      "delta": 40,
+      "vol": -90,
+      "price": 170,
+      "mix": -40,
+      "u0": 47600,
+      "u1": 47020,
+      "actual": 7140
+    },
+    {
+      "name": "Segment E",
+      "base": 4500,
+      "delta": 440,
+      "vol": 160,
+      "price": 260,
+      "mix": 20,
+      "u0": 12200,
+      "u1": 12640,
+      "actual": 4940
+    },
+    {
+      "name": "Segment F",
+      "base": 4200,
+      "delta": -15,
+      "vol": 3600,
+      "price": -3630,
+      "mix": 15,
+      "u0": 23200,
+      "u1": 26040,
+      "actual": 4185
+    },
+    {
+      "name": "Segment G",
+      "base": 580,
+      "delta": -220,
+      "vol": 280,
+      "price": -570,
+      "mix": 70,
+      "u0": 36100,
+      "u1": 39720,
+      "actual": 360
+    },
+    {
+      "name": "Segment H",
+      "base": 130,
+      "delta": -35,
+      "vol": 20,
+      "price": -110,
+      "mix": 55,
+      "u0": 2800,
+      "u1": 3100,
+      "actual": 95
+    },
+    {
+      "name": "Other / recon.",
+      "base": 2990,
+      "delta": 160,
+      "vol": 420,
+      "price": -60,
+      "mix": -200,
+      "u0": 48200,
+      "u1": 66860,
+      "actual": 3150
+    }
+  ],
+  "total": {
+    "base": 92000,
+    "actual": 93500,
+    "delta": 1500,
+    "u0": 199800,
+    "u1": 224700,
+    "vol": 3340,
+    "price": -1630,
+    "mix": -210
+  },
+  "countries": [
+    [
+      "Country H",
+      -410
+    ],
+    [
+      "Country D",
+      -400
+    ],
+    [
+      "Country C",
+      -300
+    ],
+    [
+      "Country B",
+      -40
+    ],
+    [
+      "Country A",
+      -12
+    ],
+    [
+      "Export view",
+      -4
+    ],
+    [
+      "Country E",
+      60
+    ],
+    [
+      "Country G",
+      450
+    ],
+    [
+      "Country F",
+      2156
+    ]
+  ],
+  "countryA": {
+    "price": -190,
+    "volume": -4,
+    "mix": 182,
+    "total": -12,
+    "ranking": [
+      [
+        "Segment A",
+        90
+      ],
+      [
+        "Segment G",
+        -70
+      ],
+      [
+        "Segment H",
+        -38
+      ],
+      [
+        "Segment C",
+        34
+      ],
+      [
+        "Segment E",
+        -32
+      ],
+      [
+        "Segment B",
+        13
+      ],
+      [
+        "Segment D",
+        -12
+      ],
+      [
+        "Segment F",
+        3
+      ]
+    ],
+    "segmentA": {
+      "price": -82,
+      "volume": 172,
+      "mix": 0,
+      "total": 90
+    },
+    "segmentG": {
+      "price": -250,
+      "volume": 38,
+      "mix": 142,
+      "total": -70
+    },
+    "products": [
+      [
+        "Product A1",
+        5100,
+        94,
+        2400,
+        -55,
+        2350,
+        18
+      ],
+      [
+        "Product A2",
+        820,
+        -4,
+        420,
+        -3,
+        2160,
+        7
+      ],
+      [
+        "Product G1",
+        98,
+        -45,
+        980,
+        65,
+        310,
+        26
+      ],
+      [
+        "Product G2",
+        44,
+        -25,
+        580,
+        -320,
+        340,
+        120
+      ]
+    ]
+  },
+  "stories": {
+    "regionalStory": "Driven at the source by Product A1 (+0,8M€), volume gains dominate REGION. Net: +1,5M€.",
+    "countrySubtitle": "Broad drop: pricing softness -190k€; CM1 -12k€.",
+    "countryStory": "Country A: Driven at the source by Product B1 (-80k€), driven by ASP compression (-190k€), partially offset by accretive mix dynamics (+182k€). Net -12k€.",
+    "upsides": [
+      "Segment A +720 k€ -> driven by Volume -210 and Price +1050.",
+      "Segment E +440 k€ -> driven by Volume +160 and Price +260.",
+      "Segment C +230 k€ -> driven by Volume -40 and Price +310.",
+      "Segment B +180 k€ -> driven by Volume -800 and Price +950.",
+      "Segment D +40 k€ -> driven by Volume -90 and Price +170."
+    ],
+    "challenges": [
+      "Segment G -220 k€ -> driven by Volume +280 and Price -570.",
+      "Segment H -35 k€ -> driven by Price -110 and Mix +55.",
+      "Segment F -15 k€ -> driven by Volume +3600 and Price -3630."
+    ]
+  }
+}
