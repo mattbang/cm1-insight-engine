@@ -1,66 +1,53 @@
-# CM1 Insight Engine
+# Why Profitability Changed: Price, Volume and Mix
 
-**From country-by-country margin analysis to consistent executive reporting.**
+**Make the movements behind a profitability variance visible, so management knows where to investigate.**
 
-I built this workflow to automate the recurring analyst work behind a monthly management pack: calculate contribution-margin movements, identify the drivers that matter, and write the first draft of the executive story for every country.
+I developed a recurring analysis and reporting workflow that selects material drivers through product and country hierarchies and prepares a traceable first draft of management commentary. It helps finance explain actuals versus expectations, including opposing movements hidden by a small net result.
 
-The most valuable output is the **management commentary**. The engine works through country, segment and product relationships to explain what improved, what deteriorated, and which opposing movements the headline result hides. Formatted Excel outputs then support **Empower-linked PowerPoint updates**, reducing manual editing of slide text and charts.
+[Read generated commentary](examples/generated/management-commentary.md) · [Website case study](https://matthew-bangle-data-portfolio.mattbangle.chatgpt.site/work/profitability-driver-analysis) · [Five-slide showcase](assets/CM1_Insight_Engine_Showcase.pdf)
 
-[One-page handout](assets/CM1_Insight_Engine_Handout.pdf) · [Five-slide showcase](assets/CM1_Insight_Engine_Showcase.pdf) · [Generated comments](examples/generated/management-commentary.md) · [Run the demo](#try-it)
+![Synthetic management report with profitability waterfalls, rankings and commentary](assets/slides/slide-05.png)
 
-![Synthetic country report combining generated management commentary, KPI cards, segment rankings and PVM waterfalls](assets/slides/slide-05.png)
+*Fictional data. This earlier reporting showcase illustrates the presentation approach; the linked generated commentary shows the current public engine's output.*
 
-*Fictional figures and entities. [Browse all five reporting views →](docs/showcase.md)*
+## A small net change can hide the real story
 
-## The business value
+In the fictional demo, Country B is only **€20,000 ahead**. Underneath, Segment C improves by **€400,000** while Segment D declines by **€380,000**. Reporting only the country total would conceal both movements.
 
-A small net variance can hide a large gain in one segment and a serious decline in another. Finding that story manually means investigating each country, drilling through product levels, comparing price and volume effects, and translating the findings into an executive summary.
+The engine identifies the opposing effects and their hierarchy paths. Management can then investigate why those segments differ, compare countries and challenge its understanding of market trends. The output supplies an analytical starting point; it does not invent commercial causes.
 
-| Recurring analyst work | What the workflow automates |
-|---|---|
-| Analyse each country separately | Apply the same analytical rules across the region in one run |
-| Decide which product level explains the change | Select a product, segment or broader explanation according to the evidence |
-| Investigate gains and offsetting pressures | Trace the leading effect and its main offset to their own contributors |
-| Draft executive comments | Generate consistent management stories and concise slide subtitles |
-| Transfer results into the monthly pack | Prepare Excel feeds for linked PowerPoint text and charts |
+## My contribution and analytical choices
 
-This replaces repetitive investigation, calculation and first-draft writing, giving finance teams more time for exceptions, commercial context and decisions.
+I developed the wider workflow from Power Query and Excel into Python-based calculations, hierarchy-aware driver selection and reporting feeds. Excel outputs fed linked PowerPoint text and charts. This repository exposes the **commentary engine**, its rules and a runnable fictional example.
 
-The original project documented an estimate of **about 2.5 hours of preparation reduced to around 30 seconds of processing after source refresh**. This is a historical workflow estimate, not a controlled benchmark; refresh and management review are additional steps.
+The recurring challenge was choosing the right explanatory detail: when to drill into a product group, when a segment was sufficient and when a net result obscured important offsets.
 
-## The hard part: choosing the right story
+| Reporting need | Design decision | Value to finance and management |
+| --- | --- | --- |
+| Understand actuals versus expectations | Separate price, volume and residual effects | Make the contribution to the margin movement visible |
+| Find the right explanatory detail | Apply materiality and concentration rules through the hierarchy | Explain a product, segment or country only when supported |
+| See pressures hidden by net totals | Identify material gains and declines separately | Keep offsetting problems visible |
+| Prepare recurring management packs | Generate a consistent first draft and reporting feed | Spend review time on commercial context and follow-up |
+| Challenge a statement | Retain selected paths, amounts and rule settings | Trace the commentary back to the evidence |
 
-The largest product movement is not always the best explanation. Price gains may come from a product whose net result declined because of volume losses. A segment may matter collectively even when none of its products dominates.
+## What the workflow enabled
 
-The engine uses separate attribution for each effect, configurable materiality and concentration thresholds, and a check for opposing branches that cancel higher in the hierarchy. It stops drilling when a more detailed claim would be weak, and records the evidence behind each selection.
+Repeatable preparation and first-draft commentary gave finance more time for commercial interpretation and follow-up. An earlier historical estimate was about 2.5 hours of preparation reduced to around 30 seconds of processing after source refresh. That estimate excludes refresh and review and is not a benchmark of this public demo.
 
-**Example:** In the demo, Country B is only **€20k** ahead. Underneath, Segment C improves by **€400k**, while Segment D declines by **€380k**. Each movement is spread across smaller products. The generated story still identifies both segments:
+**Interpretation matters:** the public engine consumes already calculated effects. In the reviewed wider workflow, “mix” is a residual that can include cost or reconciliation effects. It cannot independently establish a shift toward less profitable products. Finance still determines the business explanation.
 
-> Offsetting contributions: Segment C gained +400 kEUR, while Segment D declined -380 kEUR.
+“CM1” is the original internal contribution-margin label, retained in the repository and code names. The public title describes the business question.
 
-The commentary is deterministic and data-derived. It describes calculated relationships without inventing commercial causes. [Read the selection logic →](docs/logic.md)
+## Run the public example
 
-## From financial extract to executive slide
+Python · Excel / Power Query · management reporting
 
-```mermaid
-flowchart LR
-    A[Refreshed extract] --> B[Reconcile and calculate PVM]
-    B --> C[Identify drivers and draft commentary]
-    C --> D[Formatted Excel feeds]
-    D --> E[Empower-linked PowerPoint]
-```
+[![License: MIT](https://img.shields.io/badge/License-MIT-586171?style=flat)](LICENSE)
+[![Public tests](https://github.com/mattbang/cm1-insight-engine/actions/workflows/tests.yml/badge.svg)](https://github.com/mattbang/cm1-insight-engine/actions/workflows/tests.yml)
 
-**My contribution:** financial-analysis logic, hierarchy-aware driver selection, commentary rules, reporting automation and validation of the output contracts.
+Python 3.11 or 3.12, as configured in the public test workflow:
 
-**Original workflow:** Python, pandas, NumPy, Excel/openpyxl and Office chart XML; evolved from Power Query. **Public demo:** Python and pandas.
-
-## Try it
-
-This repository publishes the reviewed **commentary engine**, a synthetic demo, tests and sanitized reporting examples. The demo consumes already calculated price, volume and residual mix effects. Source-system ingestion, the full PVM pipeline and live Empower connections remain outside this public package.
-
-With Python 3.11 or 3.12:
-
-```bash
+```sh
 python -m venv .venv
 source .venv/bin/activate  # Windows: .venv\Scripts\activate
 python -m pip install -r requirements-dev.txt
@@ -68,8 +55,12 @@ python demo.py
 python -m pytest
 ```
 
-The demo generates management commentary, a CSV reporting feed and an evidence record from fictional countries and products. A [formatted Excel exhibit](examples/generated/reporting-feed.xlsx) illustrates the fixed reporting-cell layout; it is a packaged example, not regenerated by the Python demo. See [demo inputs and outputs](docs/demo.md), [the engine](src/cm1_narratives.py), and [validation scope](docs/validation.md).
+The demo generates commentary, a CSV reporting feed and an evidence record from fictional countries and products. The [Excel exhibit](examples/generated/reporting-feed.xlsx) illustrates the reporting-cell layout; it is packaged separately and is not regenerated by the demo.
 
-All public data is synthetic. The slides preserve earlier machine-generated story wording with substituted names and figures; they are a showcase of the reporting workflow, rather than a fresh rendering of the revised demo.
+## Inspect the implementation
 
-MIT licensed. [Matthew Bangle](https://github.com/mattbang)
+[Selection logic](docs/logic.md) · [Engine](src/cm1_narratives.py) · [Inputs and outputs](docs/demo.md) · [Validation scope](docs/validation.md) · [One-page handout](assets/CM1_Insight_Engine_Handout.pdf)
+
+Source ingestion, the full production calculation pipeline and live PowerPoint connections are outside this package. Current public code, historical experience and retained showcase assets have different scopes. All public example data is synthetic.
+
+[Matthew Bangle](https://www.linkedin.com/in/matthew-bangle/) · [Full portfolio](https://matthew-bangle-data-portfolio.mattbangle.chatgpt.site/work) · [MIT License](LICENSE)
